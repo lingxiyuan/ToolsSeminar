@@ -1,0 +1,42 @@
+% !TeX encoding = UTF-8
+% !TeX program = LuaLaTeX
+% !TeX spellcheck = en_US
+
+% Author : pppppass
+% Description : Python Assignment --- Least Square Regression
+
+\documentclass[english, nochinese]{../../TeXTemplate/pkupaper}
+
+\usepackage[paper, listings]{../../TeXTemplate/def}
+
+\newcommand{\cuniversity}{}
+\newcommand{\cthesisname}{Python Assignment: Least Square Regression}
+\newcommand{\titlemark}{Python Assignment: Least Square Regression}
+
+\title{\titlemark}
+\author{pppppass}
+\date{January 30 2018}
+
+\begin{document}
+
+\maketitle
+
+\section{Description}
+
+Encapsulate codes of gradient method to a least square regression into a class \verb"Trainer".
+
+Let $ \rbr{ x_i, y_i } \in \Rset^2 $ where $ i = 1, 2, \cdots, n $. The least square regression problem is to find $a$ and $b$ such that
+\begin{equation}
+F \rbr{ a, b } = \frac{1}{2} \sume{i}{1}{n}{\rbr{ y_i - a - b x_i }^2}
+\end{equation}
+reaches its minimum. An na\"ive way to this problem is gradient method. That is, we fix some $a^{\rbr{0}}$ and $b^{\rbr{0}}$ first, and then update them by
+\begin{gather}
+a^{\rbr{ i + 1 }} = a^{\rbr{i}} - \eta \frac{ \pd F }{ \pd a }, \\
+b^{\rbr{ i + 1 }} = b^{\rbr{i}} - \eta \frac{ \pd F }{ \pd b }.
+\end{gather}
+
+\section{Usage of tools}
+
+All related codes are in \verb"main.ipynb".
+
+\end{document}
